@@ -1,0 +1,4 @@
+SOURCE logGroups(namePrefix: [], class: "STANDARD") START=-45m END=0s |
+fields @timestamp, userIdentity.userName, sourceIPAddress, eventName, responseElements.ConsoleLogin
+| filter eventName = "ConsoleLogin" and responseElements.ConsoleLogin = "Failure"
+| sort @timestamp desc

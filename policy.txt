@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "NeededReadS3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::mod4-lab-app-bucket",
+        "arn:aws:s3:::mod4-lab-app-bucket/*"
+      ]
+    },
+    {
+      "Sid": "NeededWriteLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ExcessiveS3Admin",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ExcessiveIAM",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateUser",
+        "iam:AttachUserPolicy",
+        "iam:CreateAccessKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ExcessiveEC2Full",
+      "Effect": "Allow",
+      "Action": "ec2:*",
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+---
+- name: Enforce config state on localhost
+  hosts: localhost
+  connection: local
+  become: false
+
+  tasks:
+    - name: Ensure config file exists with correct content
+      copy:
+        dest: "/home/{{ lookup('env', 'USER') }}/mod4/app-config.conf"
+        content: |
+          environment=production
+          debug=false
+          max_connections=100
+        mode: '0644'

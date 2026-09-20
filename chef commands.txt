@@ -1,0 +1,21 @@
+curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chef-workstation
+
+chef-client --version
+
+mkdir -p ~/lab2-chef/cookbooks/lab2_cookbook/recipes
+
+cd ~/lab2-chef
+
+nano cookbooks/lab2_cookbook/recipes/default.rb
+
+nano solo.rb
+
+sudo chef-client -z -c solo.rb -o lab2_cookbook
+
+cat /home/meysam/lab2-chef/app-config-chef.conf
+
+nano /home/meysam/lab2-chef/app-config-chef.conf
+
+sudo chef-client -z -c solo.rb -o lab2_cookbook
+
+cat /home/meysam/lab2-chef/app-config-chef.conf

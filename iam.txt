@@ -1,0 +1,3 @@
+aws iam list-access-keys --user-name userfors3
+aws iam list-attached-user-policies --user-name userfors3
+aws iam list-groups-for-user --user-name userfors3

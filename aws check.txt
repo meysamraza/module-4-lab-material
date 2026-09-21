@@ -1,0 +1,1 @@
+aws ec2 describe-tags --region eu-north-1 --filters "Name=resource-id,Values=i-0c097174568103f7f" "Name=key,Values=needs-patch"
